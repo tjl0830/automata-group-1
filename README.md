@@ -9,13 +9,14 @@ Then, during graphviz installation: CHECK -> ADD TO PATH. the graphviz executabl
 Clone this directory to your PC.
 
 Create a python environment using vscode: Choose .venv. Install all the dependencies, type in the console:
-	 pip install -r requirements.txt
+	 "pip install -r requirements.txt"
 
 To run the website, simply open the run_flask.bat file
 
 or you can open it manually in console:
 
 Type in the console:
-	flask  --app app.py run
+	"flask  --app app.py run"
+
 It will show:
  	Running on http://127.0.0.1:5000
