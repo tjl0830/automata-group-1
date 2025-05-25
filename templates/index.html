@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <title>Group 1 Automata Graph & Validation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BCS34 Group 1 Automata Graph & Validation</h1>
+            <label for="regex-select">Select Regular Expression:</label>
+        </header>
+
+        <section id="controls">
+            <div class="dropdown-container">
+                <select id="regex-select">
+                    <option value="" disabled selected>-- Select --</option>
+                    <option value="(aa+bb+aba+ba)(aba+bab+bbb)(a+b)*(a+b+aa+bba+abab)(aa+bb)*">(aa+bb+aba+ba) (aba+bab+bbb) (a+b)* (a+b+aa+bba+abab) (aa+bb)*</option>
+                    <option value="(111+101+001+010)(1+0+11)(1+0+11)*(111+000)(111+000)*(01+10+00)">(111+101+001+010) (1+0+11) (1+0+11)* (111+000) (111+000)* (01+10+00)</option>
+                </select>
+            </div>
+
+            <div class="tab-group">
+                <button class="tab active" data-tab="dfa">DFA</button>
+                <button class="tab" data-tab="cfg">CFG</button>
+                <button class="tab" data-tab="pda">PDA</button>
+            </div>
+        </section>
+
+        <section id="display-area">
+            <div id="image-container">
+                <img id="graph-image" src="{{ url_for('static', filename='placeholder.png') }}" alt="Selected Graph">
+            </div>
+        </section>
+
+        <section id="validation">
+            <div class="input-group">
+                <input type="text" id="input-string" placeholder="Enter string to validate">
+                <button id="validate-button">Validate</button>
+                <button id="show-path-button" disabled>Show path</button>
+                <button id="show-flow-button" disabled>Show flow</button>
+            </div>
+            <div class="result-log-container">
+                <label for="validation-log">Validation Log:</label>
+                <textarea id="validation-log" rows="5" readonly></textarea>
+            </div>
+        </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

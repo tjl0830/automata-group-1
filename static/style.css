@@ -1,0 +1,195 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (for full viewport height) */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text within the container */
+    width: 53%; /* Adjust width as needed */
+    max-width: 95vh; /* Set a maximum width */
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    color: #333;
+    margin-bottom: 0;
+}
+
+.dropdown-container, #controls, #display-area, #validation {
+    margin-bottom: 25px;
+}
+
+.dropdown-container label,
+.tab-group,
+.result-log-container label {
+    display: block;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #555;
+}
+
+#regex-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;         /* Make it take full width of its parent */
+    max-width: 520px;    /* Prevent it from getting too wide */
+    min-width: 0;        /* Allow shrinking below its intrinsic width */
+    margin: 10px auto;
+    display: block;
+    box-sizing: border-box; /* Include padding/border in width calculation */
+}
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px; /* space between dropdown and tabs */
+    margin-bottom: 20px;
+    justify-content: center; /* center the group horizontally */
+}
+
+.dropdown-container {
+    margin-bottom: 0; /* remove bottom margin so it aligns with tabs */
+}
+
+.tab-group {
+    display: flex;
+    justify-content: center; /* Center the tabs */
+    gap: 10px;
+}
+
+.tab {
+    padding: 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #45a049;
+}
+
+#display-area {
+    flex: 1 1 0;         /* Allow to grow and shrink */
+    min-height: 600px; /* Minimum height, but can grow */
+    height: auto;
+    width: auto; /* Fixed width for the display area */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#graph-image {
+    max-width: 100%;   /* Reduce from 100% to 60% of the container's width */
+    max-height: 100%;  /* Reduce from 100% to 60% of the container's height */
+    height: auto;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+#validation .input-group {
+    display: flex;
+    justify-content: center; /* Center the button and input */
+    align-items: center; /* Align button and input vertically */
+    gap: 10px; /* Space between button and input */
+    margin-bottom: 10px; /* Space below the input group */
+}
+
+#validate-button {
+    padding: 10px 15px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#validate-button:hover {
+    background-color: #4CAF50;
+}
+
+#show-path-button, #show-flow-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#show-path-button:hover, #show-flow-button:hover {
+    background-color: #45a049;
+}
+
+#show-path-button:disabled,
+#show-flow-button:disabled {
+    background-color: #e0e0e0;
+    border-color: #cccccc;
+    color: #888888;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+}
+
+#validation .input-group input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1; /* Allow input to take remaining space */
+    max-width: 300px; /* Optional: Limit maximum width of input */
+}
+
+.result-log-container {
+    text-align: left; /* Align text in the log to the left for readability */
+    width: auto;
+}
+
+.result-log-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#validation-log {
+    width: 100%;
+    height: 150px; /* Make it taller for the log */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: monospace; /* Use a monospace font for better readability of logs */
+    white-space: pre-wrap; /* Preserve formatting and wrap text */
+    overflow-y: scroll; /* Enable vertical scrolling if content overflows */
+    resize: none; /* make the text box non-resizable */
+    box-sizing: border-box;
+    font-size: 18px; /* Set font size to 1vh */
+}
+
+footer {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 0.9em;
+}
+
+footer p{
+    margin: 0;
+}
